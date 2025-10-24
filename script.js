@@ -1,18 +1,16 @@
+document.getElementById("abrirSobre").onclick = function() {
+  document.getElementById("modalSobre").style.display = "block";
+}
 
-const botaoAbrir = document.getElementById("abrirSobre");
-const modal = document.getElementById("modalSobre");
-const botaoFechar = modal.querySelector(".fechar");
+document.querySelector(".fechar").onclick = function() {
+  document.getElementById("modalSobre").style.display = "none";
+}
 
-botaoAbrir.addEventListener("click", () => {
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden"; 
-});
-
-botaoFechar.addEventListener("click", () => {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; 
-});
-
+window.onclick = function(event) {
+  if (event.target == document.getElementById("modalSobre")) {
+    document.getElementById("modalSobre").style.display = "none";
+  }
+}
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
